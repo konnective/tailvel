@@ -22,6 +22,9 @@ Route::get('/ecom', [FrontendController::class, 'ecom'])->name('ecom');
 Route::get('/blog', function () {
     return view('frontend.blog');
 });
+Route::get('/article', function () {
+    return view('frontend.article');
+});
 Route::get('/blog-copilot', function () {
     return view('frontend.copilot');
 });
