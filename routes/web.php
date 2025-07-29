@@ -19,5 +19,27 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/ecom', [FrontendController::class, 'ecom'])->name('ecom');
+Route::get('/blog', function () {
+    return view('frontend.blog');
+});
+Route::get('/blog-copilot', function () {
+    return view('frontend.copilot');
+});
+Route::get('/blog-canva', function () {
+    return view('frontend.canva');
+});
+Route::get('/blog-list-canva', function () {
+    return view('frontend.canva-list');
+});
+
+Route::get('/blog-category-canva', function () {
+    return view('frontend.canva-category');
+});
+Route::get('/blog-about-canva', function () {
+    return view('frontend.canva-about');
+});
+Route::get('/blog-contact-canva', function () {
+    return view('frontend.canva-contact');
+});
 
 require __DIR__.'/auth.php';
