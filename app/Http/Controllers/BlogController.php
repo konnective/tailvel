@@ -15,10 +15,10 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::latest()->paginate(10);
-        $blogs->getCollection()->transform(function ($blog) {
-            $blog->status_text = $blog->status ? 'Published' : 'Not Published';
-            return $blog;
-        });
+        // $blogs->getCollection()->transform(function ($blog) {
+        //     $blog->status_text = $blog->status ? 'Published' : 'Not Published';
+        //     return $blog;
+        // });
 
         return response()->json($blogs, Response::HTTP_OK);
     }
