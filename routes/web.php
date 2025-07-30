@@ -44,5 +44,8 @@ Route::get('/blog-about-canva', function () {
 Route::get('/blog-contact-canva', function () {
     return view('frontend.canva-contact');
 });
+Route::get('/portfolio', function () {
+    return view('portfolio.index');
+});
 
 require __DIR__.'/auth.php';
