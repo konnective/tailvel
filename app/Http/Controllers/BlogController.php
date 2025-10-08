@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 
 class BlogController extends Controller
 {
-    
+
     public function index()
     {
         $blogs = Blog::latest()->paginate(10);
@@ -33,7 +33,7 @@ class BlogController extends Controller
     // ➕ Create a new blog
     public function store(Request $request)
     {
-        
+
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255|unique:blogs',
             'content' => 'required|string',
@@ -59,7 +59,7 @@ class BlogController extends Controller
                 'slug' => Str::slug($request->title),
                 'content' => $request->content,
                 'author' => $request->author,
-                'category' => $request->category,
+                // 'category' => $request->category,
                 'tags' => $request->tags ? json_encode($request->tags) : null,
                 'published_at' => $request->published_at ?? now(),
             ]);

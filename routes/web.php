@@ -4,9 +4,8 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/blog', [FrontendController::class, 'blog'])->name('blog.blog');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,10 +19,16 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/ecom', [FrontendController::class, 'ecom'])->name('ecom');
 Route::get('/blog', function () {
-    return view('frontend.blog');
+    return view('blog.blog');
+});
+Route::get('/blogs', function () {
+    return view('blog.blogs');
+});
+Route::get('/about', function () {
+    return view('blog.about');
 });
 Route::get('/article', function () {
-    return view('frontend.article');
+    return view('blog.article');
 });
 Route::get('/blog-copilot', function () {
     return view('frontend.copilot');
